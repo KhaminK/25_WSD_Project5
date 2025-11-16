@@ -79,7 +79,7 @@
 
         <div class="button-group">
             <a href="index.jsp" class="btn btn-list">목록</a>
-            <a href="edit.html" class="btn btn-edit">수정</a>
+            <a href="edit.html" class="btn btn-edit"> 수정 </a>
             <a href="delete_ok.jsp" class="btn btn-delete">삭제</a>
         </div>
     </div>
