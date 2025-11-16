@@ -9,7 +9,7 @@
 %>
 <html>
 <head>
-    <title>글 수정 완료</title>
+    <title>글 수정 완료!</title>
     <style>
         body {
             font-family: Arial, "Noto Sans KR", sans-serif;
