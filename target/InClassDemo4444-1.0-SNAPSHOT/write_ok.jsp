@@ -1,31 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="org.example.inclassdemo4444.com.myproject.board.*" %>
+<%@ page import="org.example.inclassdemo4444.board.*" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="org.example.inclassdemo4444.board.*" %>
 <%
-    request.setCharacterEncoding("UTF-8");
+    FileUpload upload = new FileUpload();
 
-    String category = request.getParameter("category");
-    String title = request.getParameter("title");
-    String writer = request.getParameter("writer");
-    String content = request.getParameter("content");
-    String password = request.getParameter("password");
+    BoardVO vo = upload.uploadPhoto(request);
 
-    int result = 0;
+    BoardDAO dao = new BoardDAO();
+    int result = dao.insertBoard(vo);
 
-    try {
-        BoardVO vo = new BoardVO();
-        vo.setCategory(category);
-        vo.setTitle(title);
-        vo.setWriter(writer);
-        vo.setContent(content);
-        vo.setPassword(password);
-
-        BoardDAO dao = new BoardDAO();
-        result = dao.insertBoard(vo);
-
-    } catch(Exception e) {
-        e.printStackTrace(); // 콘솔에서 에러 확인
-    }
+    if(result == 0) System.out.println("글 추가 실패");
 %>
 <!DOCTYPE html>
 <html lang="ko">
